@@ -1,2 +1,7 @@
-torch
+fastapi
+uvicorn
+pymongo
 transformers
+torch
+pdfplumber
+youtube-transcript-api

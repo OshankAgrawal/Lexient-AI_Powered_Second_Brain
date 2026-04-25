@@ -1,6 +1,6 @@
 import sys
-from src.exception import CustomException
-from src.logger import logging
+from app.core.exception import CustomException
+from app.core.logger import logging
 
 import torch
 from transformers import AutoProcessor, AutoModelForSpeechSeq2Seq
@@ -14,9 +14,9 @@ t5_tokenizer = None
 t5_model = None
 
 # Global cache for Whishper_medium model
-whishper_processor = None
-whishper_model = None
-whishper_device = None
+whisper_processor = None
+whisper_model = None
+whisper_device = None
 
 def load_t5_small():
     global t5_tokenizer, t5_model
@@ -28,10 +28,10 @@ def load_t5_small():
         
     try:
         # Load Model Once
-        tokenizer_t5 = T5Tokenizer.from_pretrained(local_path_t5, local_files_only=True)
-        model_t5 = T5ForConditionalGeneration.from_pretrained(local_path_t5, local_files_only=True)
+        t5_tokenizer = T5Tokenizer.from_pretrained(local_path_t5, local_files_only=True)
+        t5_model = T5ForConditionalGeneration.from_pretrained(local_path_t5, local_files_only=True)
 
-        model_t5.eval()
+        t5_model.eval()
 
         logging.info(f"T5_small Model loaded from disk....")
 
