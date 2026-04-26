@@ -1,4 +1,5 @@
 import sys
+import os
 from app.core.exception import CustomException
 from app.core.logger import logging
 
@@ -6,8 +7,8 @@ import torch
 from transformers import AutoProcessor, AutoModelForSpeechSeq2Seq
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
-local_path_t5 = "./t5_local_model"
-local_path_whishper = "./whishper_local_model"
+local_path_t5 = os.path.join(os.getcwd(), "t5_local_model")
+local_path_whishper = os.path.join(os.getcwd(), "whisper_local_model")
 
 # Global cache for t5_small model (So model load only once not every run)
 t5_tokenizer = None
@@ -41,27 +42,27 @@ def load_t5_small():
         raise CustomException(e, sys)
     
 
-def load_whishper_medium():
-    global whishper_processor, whishper_model, whishper_device
+def load_whisper_medium():
+    global whisper_processor, whisper_model, whisper_device
 
-    if whishper_processor is not None and whishper_model is not None:
-        return whishper_processor, whishper_model, whishper_device
+    if whisper_processor is not None and whisper_model is not None:
+        return whisper_processor, whisper_model, whisper_device
     
     logging.info("Loading whisper_medium model for FIRST time.......")
 
     try:
         # Load model once
-        whishper_device = "cuda" if torch.cuda.is_available() else "cpu"
+        whisper_device = "cuda" if torch.cuda.is_available() else "cpu"
 
-        whishper_processor = AutoProcessor.from_pretrained(local_path_whishper, local_files_only=True)
-        whishper_model = AutoModelForSpeechSeq2Seq.from_pretrained(local_path_whishper, local_files_only=True)
+        whisper_processor = AutoProcessor.from_pretrained(local_path_whishper, local_files_only=True)
+        whisper_model = AutoModelForSpeechSeq2Seq.from_pretrained(local_path_whishper, local_files_only=True)
 
-        whishper_model.to(whishper_device)
-        whishper_model.eval()
+        whisper_model.to(whisper_device)
+        whisper_model.eval()
 
-        logging.info(f"Whisper_medium model loaded on {whishper_device}")
+        logging.info(f"Whisper_medium model loaded on {whisper_device}")
 
-        return whishper_processor, whishper_model, whishper_device
+        return whisper_processor, whisper_model, whisper_device
     
     except Exception as e:
         raise CustomException(e, sys)

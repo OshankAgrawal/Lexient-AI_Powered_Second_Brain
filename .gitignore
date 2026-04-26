@@ -2,3 +2,4 @@ t5_local_model/
 whisper_local_model/
 .myenv/
 logs/
+temp_audio/
