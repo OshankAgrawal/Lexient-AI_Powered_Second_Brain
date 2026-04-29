@@ -1,7 +1,7 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
 import os
 from app.services.audio_processor import transcribe_audio
-from app.services.summarizer import summarize_text
+from app.services.pipeline_service import process_and_save
 from app.core.logger import logging
 
 router = APIRouter()
@@ -23,16 +23,8 @@ async def summarize_audio(file: UploadFile = File(...)):
         # Step 1: Transcribe
         text = transcribe_audio(file_path)
 
-        # Step 2: Summarize
-        summary = summarize_text(text)
-
-        # cleanup
-        os.remove(file_path)
-
-        return {
-            "transcription": text,
-            "summary": summary
-        }
+        # Step 2: Summarize & save
+        return process_and_save(text, "audio")
     
     except Exception as e:
         logging.error("Audio summarization failed")

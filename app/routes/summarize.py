@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from app.services.summarizer import summarize_text
+from app.services.pipeline_service import process_and_save
 from app.core.logger import logging
 
 router = APIRouter()
@@ -13,11 +13,8 @@ def summarize(req: TextRequest):
     try:
         logging.info("API /summarize-text called")
         
-        summary = summarize_text(req.text)
+        return process_and_save(req.text, "text")
 
-        return{
-            "summary": summary
-        }
     except Exception as e:
         logging.error("API failed: /summarize-text")
 

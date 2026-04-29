@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from app.services.youtube_processor import get_transcript
-from app.services.summarizer import summarize_text
+from app.services.pipeline_service import process_and_save
 from app.core.logger import logging
 
 router = APIRouter()
@@ -17,13 +17,8 @@ def summarize_youtube(req: YouTubeRequest):
         # Get transcript
         text = get_transcript(req.url)
 
-        # Summarize
-        summary = summarize_text(text)
-
-        return {
-            "transcript": text,
-            "summary": summary
-        }
+        # Summarize & save
+        return process_and_save(text, "youtube")
     
     except Exception as e:
         logging.error(f"YouTube summarization failed: {str(e)}")

@@ -1,6 +1,6 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from app.services.pdf_processor import extract_text_from_pdf
-from app.services.summarizer import summarize_text
+from app.services.pipeline_service import process_and_save
 from app.core.logger import logging
 
 router = APIRouter()
@@ -17,13 +17,9 @@ async def summarize_pdf(file: UploadFile = File(...)):
         # Extract text
         text = extract_text_from_pdf(file.file)
 
-        # Summarize
-        summary = summarize_text(text)
+        # Summarize & return
+        return  process_and_save(text, "pdf")
 
-        return {
-            "summary": summary
-        }
-    
     except Exception as e:
         logging.error("PDF summarization failed")
 
