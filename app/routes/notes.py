@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from app.services.note_service import get_all_notes
+from app.services.notes_service import get_all_notes
 from app.core.logger import logging
 
 router = APIRouter()
