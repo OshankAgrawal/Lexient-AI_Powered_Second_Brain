@@ -1,6 +1,6 @@
 import sys
-from backend.app.core.exception import CustomException
-from backend.app.core.logger import logging
+from app.core.exception import CustomException
+from app.core.logger import logging
 
 import librosa
 import soundfile as sf

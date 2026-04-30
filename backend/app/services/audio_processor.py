@@ -1,9 +1,9 @@
 import librosa
 import torch
-from backend.app.services.load_models import load_whisper_medium
-from backend.app.services.load_audio import load_audio
-from backend.app.core.logger import logging
-from backend.app.core.exception import CustomException
+from app.services.load_models import load_whisper_medium
+from app.services.load_audio import load_audio
+from app.core.logger import logging
+from app.core.exception import CustomException
 import sys
 
 def transcribe_audio(file_path: str) -> str:

@@ -1,6 +1,6 @@
-from backend.app.services.load_models import load_t5_small
-from backend.app.core.logger import logging
-from backend.app.core.exception import CustomException
+from app.services.load_models import load_t5_small
+from app.core.logger import logging
+from app.core.exception import CustomException
 import sys
 import torch
 

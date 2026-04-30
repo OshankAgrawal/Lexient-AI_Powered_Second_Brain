@@ -1,7 +1,7 @@
-from backend.app.core.database import notes_collection
+from app.core.database import notes_collection
 from datetime import datetime
-from backend.app.core.logger import logging
-from backend.app.core.exception import CustomException
+from app.core.logger import logging
+from app.core.exception import CustomException
 import sys
 
 def save_note(note: dict):

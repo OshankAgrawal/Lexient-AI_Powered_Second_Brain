@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from backend.app.services.notes_service import get_all_notes
-from backend.app.core.logger import logging
+from app.services.notes_service import get_all_notes
+from app.core.logger import logging
 
 router = APIRouter()
     

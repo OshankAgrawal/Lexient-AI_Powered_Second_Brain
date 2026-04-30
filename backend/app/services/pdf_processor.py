@@ -1,6 +1,6 @@
 import pdfplumber
-from backend.app.core.logger import logging
-from backend.app.core.exception import CustomException
+from app.core.logger import logging
+from app.core.exception import CustomException
 import sys
 
 def extract_text_from_pdf(file) -> str:

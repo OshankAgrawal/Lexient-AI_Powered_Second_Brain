@@ -1,5 +1,5 @@
-from backend.app.services.summarizer import summarize_text
-from backend.app.services.notes_service import save_note
+from app.services.summarizer import summarize_text
+from app.services.notes_service import save_note
 
 def process_and_save(input_data: str, input_type: str):
     summary = summarize_text(input_data)

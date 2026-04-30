@@ -1,6 +1,6 @@
 from youtube_transcript_api import YouTubeTranscriptApi
-from backend.app.core.logger import logging
-from backend.app.core.exception import CustomException
+from app.core.logger import logging
+from app.core.exception import CustomException
 import sys
 import re
 

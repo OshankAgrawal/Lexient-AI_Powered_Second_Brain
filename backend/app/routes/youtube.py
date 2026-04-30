@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from backend.app.services.youtube_processor import get_transcript
-from backend.app.services.pipeline_service import process_and_save
-from backend.app.core.logger import logging
+from app.services.youtube_processor import get_transcript
+from app.services.pipeline_service import process_and_save
+from app.core.logger import logging
 
 router = APIRouter()
 

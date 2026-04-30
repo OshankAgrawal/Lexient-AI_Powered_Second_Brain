@@ -1,8 +1,8 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
 import os
-from backend.app.services.audio_processor import transcribe_audio
-from backend.app.services.pipeline_service import process_and_save
-from backend.app.core.logger import logging
+from app.services.audio_processor import transcribe_audio
+from app.services.pipeline_service import process_and_save
+from app.core.logger import logging
 
 router = APIRouter()
 

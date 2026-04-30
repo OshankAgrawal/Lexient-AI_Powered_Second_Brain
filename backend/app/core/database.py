@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from backend.app.core.logger import logging
+from app.core.logger import logging
 
 MONGO_URI = "mongodb://localhost:27017"
 

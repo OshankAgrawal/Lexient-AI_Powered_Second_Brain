@@ -1,7 +1,7 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
-from backend.app.services.pdf_processor import extract_text_from_pdf
-from backend.app.services.pipeline_service import process_and_save
-from backend.app.core.logger import logging
+from app.services.pdf_processor import extract_text_from_pdf
+from app.services.pipeline_service import process_and_save
+from app.core.logger import logging
 
 router = APIRouter()
 
