@@ -1,5 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+myenv/
+venv/
+env/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+temp_audio/
+*.tmp
+
+# ML Models (VERY IMPORTANT)
 t5_local_model/
 whisper_local_model/
-.myenv/
-logs/
-temp_audio/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build files
+dist/
+build/
+*.egg-info/
+
+# Environment variables
+.env
+
+# Node (if added later)
+node_modules/
