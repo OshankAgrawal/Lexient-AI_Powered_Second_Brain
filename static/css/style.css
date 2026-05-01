@@ -1,0 +1,126 @@
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #020617;
+color: white;
+}
+
+.container {
+display: flex;
+height: 100vh;
+}
+
+/* LEFT PANEL */
+.left-panel {
+width: 40%;
+padding: 20px;
+background: #020617;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+width: 60%;
+padding: 20px;
+background: #020617;
+}
+
+/* TABS */
+.tabs {
+display: flex;
+gap: 10px;
+margin-bottom: 15px;
+}
+
+.tab {
+padding: 8px 12px;
+background: transparent;
+border: none;
+color: gray;
+cursor: pointer;
+}
+
+.tab.active {
+color: #3b82f6;
+border-bottom: 2px solid #3b82f6;
+}
+
+/* TAB CONTENT */
+.tab-content {
+display: none;
+}
+
+.tab-content.active {
+display: block;
+}
+
+/* UPLOAD BOX */
+.upload-box {
+border: 2px dashed #3b82f6;
+padding: 40px;
+text-align: center;
+border-radius: 10px;
+cursor: pointer;
+}
+
+/* INPUT */
+textarea, input {
+width: 100%;
+padding: 10px;
+margin-top: 10px;
+border-radius: 5px;
+border: none;
+}
+
+/* BUTTON */
+button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+/* TIMELINE */
+.timeline-item {
+background: #0f172a;
+padding: 15px;
+margin-bottom: 10px;
+border-radius: 8px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.search-box input {
+    flex: 1;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 6px;
+    border: none;
+    background: #0f172a;
+    color: white;
+}
+
+.search-box button {
+    width: 100px;
+    height: 40px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #2563eb;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lexient</title>
+
+
+<link rel="stylesheet" href="/static/css/style.css">
+
+
+</head>
+<body>
+
+<div class="container">
+
+
+<!-- LEFT PANEL -->
+<div class="left-panel">
+
+    <h2>Add Content</h2>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab active" onclick="switchTab('upload', this)">Upload</button>
+        <button class="tab" onclick="switchTab('text', this)">Paste Text</button>
+        <button class="tab" onclick="switchTab('audio', this)">Audio</button>
+        <button class="tab" onclick="switchTab('youtube', this)">YouTube</button>
+    </div>
+
+    <!-- UPLOAD BOX -->
+    <div id="upload" class="tab-content active">
+
+    <div class="upload-box" onclick="document.getElementById('pdfInput').click()">
+        <p>Drag & Drop PDF</p>
+        <p>or click to choose</p>
+    </div>
+
+    <input type="file" id="pdfInput" hidden>
+
+    <!-- 🔥 ADD THIS BUTTON -->
+    <button onclick="submitPDF()">Upload PDF</button>
+
+</div>
+
+    <!-- TEXT -->
+    <div id="text" class="tab-content">
+        <textarea id="textInput" placeholder="Enter text..."></textarea>
+        <button onclick="submitText()">Submit</button>
+    </div>
+
+    <!-- AUDIO -->
+    <div id="audio" class="tab-content">
+        <p>Select Audio File:</p>
+    <input type="file" id="audioInput">
+
+    <!-- 🔥 ADD BUTTON -->
+    <button onclick="submitAudio()">Upload Audio</button>
+
+</div>
+
+    <!-- YOUTUBE -->
+    <div id="youtube" class="tab-content">
+        <input type="text" id="youtubeInput" placeholder="Enter YouTube URL">
+        <button onclick="submitYoutube()">Submit</button>
+    </div>
+
+</div>
+
+<!-- RIGHT PANEL -->
+<div class="right-panel">
+    <h2>Timeline</h2>
+
+    <!-- SEARCH BOX -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search notes...">
+        <button onclick="searchNotes()">Search</button>
+    </div>
+
+    <div id="timeline"></div>
+</div>
+
+
+</div>
+
+<script src="/static/js/script.js"></script>
+
+</body>
+</html>
