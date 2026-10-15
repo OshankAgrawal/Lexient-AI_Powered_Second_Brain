@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Pixel:ELSH@100&family=Montenegrin+Gothic+One&display=swap');
+@import "tailwindcss";
+
+:root{
+    background-color: #EEE2DC;
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+@theme {
+    --color-background:#EEE2DC;
+    --color-card-surface:#EDC7B7;
+    --color-primary-text:#AC3B61;
+    --color-accent:#63595d;
+    --color-secondary-text:#123C69;
+
+    --font-montenegrin-gothic-one: "Montenegrin Gothic One", sans-serif;
+    --font-geist-pixel: "Geist Pixel", sans-serif;
+
+    --text-navBtn: 1.3rem;
+}
+
+@layer components{
+    .hero-sec-cont{
+        @apply border rounded-2xl h-[65vh] mx-25 mt-10 p-1 pt-10 pl-10 shadow-xl shadow-card-surface;
+    }
+    .adv-cards{
+        @apply border rounded-2xl px-5 py-3 mr-5 mb-4 basis-68 shadow-md/70 shadow-card-surface
+    }
+    .adv-cards-heading{
+        @apply text-2xl font-semibold text-secondary-text mb-1.5
+    }
+    .flex-center{
+        @apply flex justify-center items-center
+    }
+
+    .form-main-container{
+        @apply text-center flex flex-col items-center pt-5 px-20 ml-50 mt-15 rounded-2xl w-6/10 shadow-2xl shadow-card-surface
+    }
+
+    .form-div {
+        @apply flex flex-col border rounded-md p-1.5 mb-3 hover:shadow-card-surface hover:shadow-md
+    }
+
+    .form-label{
+        @apply text-left text-sm text-neutral-600
+    }
+
+    .form-input {
+        @apply focus:outline-none
+    }
+
+    .hover-theme-shadow {
+        @apply hover:shadow-md hover:shadow-card-surface
+    }
+}
