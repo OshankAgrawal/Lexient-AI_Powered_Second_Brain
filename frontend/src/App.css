@@ -54,4 +54,49 @@
     .hover-theme-shadow {
         @apply hover:shadow-md hover:shadow-card-surface
     }
+
+    .Aside-NavLinks{
+        @apply border px-15 py-1 rounded-md bg-neutral-500 text-neutral-100
+    }
+    .chat-container {
+        @apply flex flex-col w-full h-full min-h-0 bg-card-surface/40 rounded-2xl border border-accent/30 overflow-hidden shadow-lg shadow-card-surface/50;
+    }
+
+    .chat-topbar {
+        @apply flex items-center justify-between px-4 py-2.5 border-b border-accent/20 bg-card-surface/60 backdrop-blur-sm text-xs text-secondary-text;
+    }
+
+    .chat-sidebar {
+        @apply w-56 border-r border-accent/20 bg-background/50 flex flex-col justify-between p-2;
+    }
+
+    .chat-sidebar-item {
+        @apply flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium text-secondary-text transition-all duration-150 cursor-pointer hover:bg-card-surface/80;
+    }
+
+    .chat-sidebar-item-active {
+        @apply bg-secondary-text text-background hover:bg-secondary-text/90 font-semibold;
+    }
+
+    /* Badges & Action Buttons */
+    .chat-badge {
+        @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-secondary-text text-background border border-secondary-text/20;
+    }
+
+    .chat-model-tag {
+        @apply inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono bg-accent/20 text-accent border border-accent/30;
+    }
+
+    .chat-icon-btn {
+        @apply p-1.5 rounded-md text-accent hover:text-secondary-text hover:bg-card-surface transition-all duration-150 cursor-pointer disabled:opacity-40;
+    }
+
+    /* Input & Bottom Bar */
+    .chat-input-box {
+        @apply w-full bg-background/90 border border-accent/30 rounded-2xl p-3 focus-within:border-secondary-text focus-within:ring-1 focus-within:ring-secondary-text transition-all;
+    }
+
+    .chat-statusbar {
+        @apply flex items-center justify-between px-3 py-1 text-[11px] text-accent/80 border-t border-accent/20 bg-background/40;
+    }
 }
